@@ -170,22 +170,35 @@ switch ($settings['title_size']) {
 // Link Style
 switch ($settings['link_style']) {
     case 'button':
-        $link_style = '{wk}-button';
+        $link_style = 'uk-button uk-button-default';
         break;
     case 'primary':
-        $link_style = '{wk}-button {wk}-button-primary';
+        $link_style = 'uk-button uk-button-primary';
         break;
-    case 'button-large':
-        $link_style = '{wk}-button {wk}-button-large';
+    case 'secondary':
+        $link_style = 'uk-button uk-button-secondary';
         break;
-    case 'primary-large':
-        $link_style = '{wk}-button {wk}-button-large {wk}-button-primary';
+    case 'danger':
+        $link_style = 'uk-button uk-button-danger';
         break;
     case 'button-link':
-        $link_style = '{wk}-button {wk}-button-link';
+        $link_style = 'uk-button uk-button-link';
         break;
+    case 'text':
     default:
-        $link_style = '';
+        $link_style = 'uk-button uk-button-text';
+}
+
+switch ($settings['button_size']) {
+    case 'small':
+        $button_size = ' uk-button-small';
+        break;
+    case 'large':
+        $button_size = ' uk-button-large';
+        break;
+    case 'default':
+    default:
+        $button_size = '';
 }
 
 // Badge Style
@@ -507,7 +520,7 @@ $link_target = ($settings['link_target']) ? ' target="_blank"' : '';
                             <?php endif; ?>
 
                             <?php if ($item['link'] && $settings['link']) : ?>
-                            <p><a<?php if($link_style) echo ' class="' . $link_style . '"'; ?> href="<?php echo $item->escape('link'); ?>"<?php echo $link_target; ?>><?php echo $app['translator']->trans($settings['link_text']); ?></a></p>
+                            <p><a<?php if($link_style) echo ' class="' . $link_style . $button_size .'"'; ?> href="<?php echo $item->escape('link'); ?>"<?php echo $link_target; ?>><?php echo $app['translator']->trans($settings['link_text']); ?></a></p>
                             <?php endif; ?>
                         </div>
             <?php if ($item['media'] && $settings['media'] && in_array($settings['media_align'], array('left', 'right'))) : ?>

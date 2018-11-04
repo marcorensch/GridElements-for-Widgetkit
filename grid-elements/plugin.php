@@ -58,6 +58,7 @@ return array(
             'text_align'                => 'left',
             'link'                      => true,
             'link_style'                => 'button',
+            'button_size'               => 'default',
             'link_text'                 => 'Read more',
             'badge'                     => true,
             'badge_style'               => 'badge',

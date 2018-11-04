@@ -400,12 +400,23 @@
                     <label class="uk-form-label" for="wk-link-style">{{'Style' | trans}}</label>
                     <div class="uk-form-controls">
                         <select id="wk-link-style" class="uk-form-width-medium" ng-model="widget.data['link_style']">
-                            <option value="text">{{'Text' | trans}}</option>
                             <option value="button">{{'Button' | trans}}</option>
                             <option value="primary">{{'Button Primary' | trans}}</option>
-                            <option value="button-large">{{'Button Large' | trans}}</option>
-                            <option value="primary-large">{{'Button Large Primary' | trans}}</option>
+                            <option value="secondary">{{'Button Secondary' | trans}}</option>
+                            <option value="danger">{{'Button Danger' | trans}}</option>
                             <option value="button-link">{{'Button Link' | trans}}</option>
+                            <option value="text">{{'Text' | trans}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="uk-form-row" ng-if="widget.data.link_style == 'button' || widget.data.link_style == 'primary' || widget.data.link_style == 'secondary' || widget.data.link_style == 'danger'">
+                    <label class="uk-form-label" for="nx-button-size">{{'Button-Size' | trans}}</label>
+                    <div class="uk-form-controls">
+                        <select id="nx-button-size" class="uk-form-width-medium" ng-model="widget.data['button_size']">
+                            <option value="small">{{'Small' | trans}}</option>
+                            <option value="default">{{'Default' | trans}}</option>
+                            <option value="large">{{'Large' | trans}}</option>
                         </select>
                     </div>
                 </div>
